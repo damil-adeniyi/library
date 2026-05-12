@@ -216,6 +216,7 @@ form .form-group input {
     padding: 5px;
     border-radius: 5px;
     border: 1px solid var(--grey-color);
+    color: var(--primary-color);
 }
 
 form .form-group input:focus {
@@ -242,6 +243,7 @@ form .form-group select {
     padding: 5px;
     border-radius: 5px;
     border: 1px solid var(--grey-color);
+    color: var(--primary-color);
 }
 
 form .form-group select:focus {
@@ -251,7 +253,7 @@ form .form-group select:focus {
 
 form .form-group select option {
     padding: 5px;
-    color: var(--grey-text-color);
+    color: var(--primary-color);
 }
 
 form .form-group select option:hover {
