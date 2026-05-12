@@ -37,16 +37,16 @@
                         <div class="write-up">
                             <div class="tags">
                                  <div class="tag title">
-                                <strong>Title:</strong> <h3 class="title"> Super Cool book</h3>  
+                                <strong>Title:</strong> <h3 class="book-title"> Super Cool book</h3>  
                             </div>
                             <div class="tag author">
-                                <strong>Author: </strong> <h3 class="title">Super Cool book</h3>  
+                                <strong>Author: </strong> <h3 class="book-author">Super Cool book</h3>  
                             </div>
                             <div class="tag pages">
-                                <strong>Pages: </strong> <h3 class="title">Super Cool book</h3>  
+                                <strong>Pages: </strong> <h3 class="book-pages">Super Cool book</h3>  
                             </div>
                             <div class="tag">
-                                <strong>Read Status: </strong> <h3 class="title">Super Cool book</h3>  
+                                <strong>Read Status: </strong> <h3 class="book-read">Super Cool book</h3>  
                             </div>
                             </div>
                              
@@ -79,24 +79,43 @@
                 
             </div>
 
-            <div class="announcements">
-                <div class="annouce-h">
-                    <h2>Announcements</h2>
+            <div class="new-books">
+                <div class="new-books-h">
+                    <h2>Add a New Book</h2>
                 </div>
 
                 <div class="sections">
-                    <div class="annoucement">
-                        <h3>Site Maintenance</h3>
-                        <p>lorem ipsum dolor sit amet, consectetur adipiscing elit. sed do eiusmod tempor incididunt ut labore.</p>
+                    <div class="create-book">
+                        <h2>Create a New Book</h2>
+                        <p>Welcome to our book creation form!
+                        Please fill in the required information to add your 
+                        book to the library. 
+                        </p>
                     </div>
-                    <div class="annoucement">
-                        <h3>Community Share Day</h3>
-                        <p>lorem ipsum dolor sit amet, consectetur adipiscing elit. sed do eiusmod tempor incididunt ut labore.</p>
-                    </div>
-                    <div class="annoucement">
-                        <h3>Updated Privacy Policy</h3>
-                        <p>lorem ipsum dolor sit amet, consectetur adipiscing elit. sed do eiusmod tempor incididunt ut labore.</p>
-                    </div>
+
+                    <form action="" method="post">
+                        <legend>Let's Get Started!</legend>
+                        <div class="form-group">
+                            <label for="book-title">Book Title:</label>
+                            <input type="text" id="book-title" name="book-title" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="book-author">Author:</label>
+                            <input type="text" id="book-author" name="book-author" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="book-pages">Pages:</label>
+                            <input type="number" id="book-pages" name="book-pages" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="book-read">Read Status:</label>
+                            <select id="book-read" name="book-read" required>
+                                <option value="Read">Read</option>
+                                <option value="Not Read">Not Read</option>
+                            </select>
+                        </div>
+                        <button type="submit" id="submit-btn">Add Book</button>
+                    </form>
                 </div>
             </div>
 

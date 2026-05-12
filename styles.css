@@ -152,46 +152,118 @@ body {
     gap: 10px;
 }
 
-/* Annoucements */
-.main-content .announcements {
+/* new-books */
+.main-content .new-books {
     grid-row: 2/3;
     display: grid;
     grid-template-rows: min-content 1fr;
     gap: 10px;
 }
 
-.announcements .sections {
+.new-books .sections {
     background-color: var(--text-color);
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 0 20px;
+    gap: 15px;
+    padding: 20px;
     border-radius: 10px;
     box-shadow: 0px 5px 20px -5px rgba(0, 0, 0, 0.2);
 }
 
-.announcements .annoucement {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 5px;
-    padding: 10px 0;
-    border-bottom: 1px solid var(--primary-color);
-}
-
-.announcements .annoucement h3 {
-    font-size: 1rem;
-    color: var(--primary-color);
-}
-
-.announcements .annoucement p {
+.new-books .sections p {
     color: var(--grey-text-color);
     font-size: 0.8rem;
 }
 
-.announcements .annoucement:last-of-type {
-    border-bottom: 0;
+form legend {
+    font-size: 1.2rem;
+    color: var(--primary-color);
 }
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+form .form-group {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+form .form-group label {
+    width: 30%;
+    color: var(--primary-color);
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+form .form-group input {
+    width: 70%;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid var(--grey-color);
+}
+
+form .form-group input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+form button {
+    width: 100px;
+    padding: 10px;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: var(--secondary-color);
+}
+
+form .form-group select {
+    width: 70%;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid var(--grey-color);
+}
+
+form .form-group select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+form .form-group select option {
+    padding: 5px;
+    color: var(--grey-text-color);
+}
+
+form .form-group select option:hover {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+}
+
+form .form-group select option:checked {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+}
+
+form .form-group select option:focus {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+}
+
+form .form-group select option:active {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+}
+
+form 
+
 
 /* Trending */
 .main-content .trending {
