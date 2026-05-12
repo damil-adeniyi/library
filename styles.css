@@ -46,8 +46,7 @@ body {
 
 .container .main-content {
     background-color: var(--grey-color);
-    padding: 20px 40px;
-    padding-bottom: 40px;
+    padding: 20px 30px;
     display: grid;
     /* grid-template: repeat(auto-fit, minmax(300px, 1fr)) / 3fr 1fr ; */
     grid-template: 100px 1fr 1fr  / 1fr 1fr 1fr;
@@ -121,6 +120,7 @@ body {
 .your-books .books strong {
     color: var(--primary-color);
     padding-right: 5px;
+    font-size: 1.2rem;
 }
 
 .your-books .books .icons {
@@ -135,15 +135,16 @@ body {
 }
 
 .your-books .books p {
-    
     color: var(--grey-text-color);
     font-size: 0.8rem;
 }
 
-.your-books .books h3 {
+.your-books .books h4 {
     font-size: 1rem;
     font-weight: 400;
-    color: var(--grey-text-color);
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
 }
 
 .your-books .books .write-up {
@@ -160,6 +161,11 @@ body {
     gap: 10px;
 }
 
+.main-content .new-books h2 {
+    color: var(--primary-color);
+    font-size: 1.4rem;
+}
+
 .new-books .sections {
     background-color: var(--text-color);
     display: flex;
@@ -169,6 +175,12 @@ body {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0px 5px 20px -5px rgba(0, 0, 0, 0.2);
+}
+
+
+.new-books .sections h3 {
+    color: var(--primary-color);
+    font-size: 1.2rem;
 }
 
 .new-books .sections p {
@@ -200,7 +212,7 @@ form .form-group label {
 }
 
 form .form-group input {
-    width: 70%;
+    width: 65%;
     padding: 5px;
     border-radius: 5px;
     border: 1px solid var(--grey-color);
@@ -262,11 +274,9 @@ form .form-group select option:active {
     color: var(--text-color);
 }
 
-form 
-
 
 /* Trending */
-.main-content .trending {
+.trending {
     display: grid;
     grid-template-rows: min-content 1fr;
     gap: 10px;
@@ -325,9 +335,25 @@ form
 
 .container .main-content {
     display: grid;
-    grid-template-rows: 1fr;
+    grid-template-rows: 100px 1fr 1fr 1fr;
     grid-template-columns: 1fr;
 }
 
+.container .my-library {
+    grid-row: 1/2;
+    grid-column: 1/2;
+}
+
+.container .your-books {
+    grid-row: 2/3;
+}
+
+.container .new-books {
+    grid-row: 3/4;
+}
+
+.container .trending {
+    grid-row: 4/5;
+}
 
 }
