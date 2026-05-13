@@ -13,6 +13,12 @@ function Book (title, author, pages, read) {
     this.author = author;
     this.pages = pages;
     this.read = read;
+    this.toggleReadStatus = function () {
+        if (this.read === 'Read') {
+            this.read = 'Not Read';
+        } else { this.read = 'Read';
+        }
+    }
 }
 
 function addBookToLibrary (title, author, pages, read) {
@@ -38,15 +44,30 @@ function displayBook () {
 
 
             bookCard.innerHTML = `
-            <div class="book-title"><h4><strong>Title:</strong> ${book.title}</h4>
+            <div class="book-title tag"><strong>Title:</strong><h4>${book.title}</h4>
             </div>
-            <div class="book-author"><h4><strong>Author:</strong> ${book.author}</h4></div>
-            <div class="book-pages"><h4><strong>Pages:</strong> ${book.pages}</h4></div>
-            <div class="book-read"><h4><strong>Status:</strong> ${book.read}</h4></div>
+            <div class="book-author tag"><strong>Author:</strong><h4> ${book.author}</h4></div>
+            <div class="book-pages tag"><strong>Pages:</strong><h4> ${book.pages}</h4></div>
+            <div class="book-read tag"><strong>Status:</strong><h4 class='status-text'> ${book.read}</h4></div>
             <div><button class="status status-remove">Remove Book</button> <button class="status status-read">Read Status</button></div>
             `;
-           
 
+            // 1. Target the specific buttons inside this individual card wrapper
+            const readBtn = bookCard.querySelector('.status-read');
+            const removeBtn = bookCard.querySelector('.status-remove');
+            
+            // 2. Wire up the Read Status toggle event
+            readBtn.addEventListener('click', () => {
+                if (typeof book.toggleReadStatus === 'function') {
+                    book.toggleReadStatus(); // Runs your prototype function
+                } else {
+                    // Fallback for hardcoded objects not instantiated via 'new Book()'
+                    book.read = (book.read === 'Read') ? 'Not Read' : 'Read';
+                }
+                displayBook(); // Refresh screen view with new state
+            });
+            
+           
             bookCont.appendChild(bookCard);
         }
     )
@@ -54,6 +75,8 @@ function displayBook () {
 }
 
 displayBook()
+
+
 
 // create Book btn
 
@@ -80,4 +103,5 @@ bookForm.addEventListener('submit', function(e) {
 
     bookForm.reset(); 
 });
+
 
