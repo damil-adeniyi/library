@@ -23,12 +23,35 @@ function addBookToLibrary (title, author, pages, read) {
 }
 addBookToLibrary('The Children of Hurin', 'J.R.R. Tolkien', 320, 'Read');
 
-const bookTitle = document.getElementById('book-title');
-const bookAuthor = document.getElementById('book-author');
-const bookPages = document.getElementById('book-pages');
-const bookRead = document.getElementById('book-read');
 
-const submitBtn = document.getElementById('submit-btn');
+const submitBtn = document.querySelector('#submit-btn');
+
+function displayBook () {
+    const bookCont = document.querySelector('.books')
+    
+    bookCont.innerHTML = '';
+
+    library.forEach(
+        (book) => {
+            const bookCard = document.createElement('div');
+            bookCard.classList.add('book');
+
+
+            bookCard.innerHTML = `
+            <div class="book-title"><h4><strong>Title:</strong> ${book.title}</h4></div>
+            <div class="book-author"><h4><strong>Author:</strong> ${book.author}</h4></div>
+            <div class="book-pages"><h4><strong>Pages:</strong> ${book.pages}</h4></div>
+            <div class="book-read"><h4><strong>Read Status:</strong> ${book.read}</h4></div>
+            `;
+           
+
+            bookCont.appendChild(bookCard);
+        }
+    )
+
+}
+
+displayBook()
 
 submitBtn.addEventListener('click', function() {
     const title = bookTitle.value;
