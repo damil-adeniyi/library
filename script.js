@@ -2,10 +2,14 @@
 const library = [
     {id: crypto.randomUUID(), title: 'The Hobbit', author: 'J.R.R. Tolkien', pages: 310, read: 'Read'},
     {id: crypto.randomUUID(), title: 'The Lord of the Rings', author: 'J.R.R. Tolkien', pages: 1178, read: 'Read'},
-    {id: crypto.randomUUID(), title: 'The Silmarillion', author: 'J.R.R. Tolkien', pages: 365, read: 'Not Read'},    
-    {id: crypto.randomUUID(), title: 'The Children of Hurin', author: 'J.R.R. Tolkien', pages: 320, read: 'Read'},
-    {id: crypto.randomUUID(), title: 'The Unfinished Tales', author: 'J.R.R. Tolkien', pages: 472, read: 'Not Read'}
-];
+    {id: crypto.randomUUID(), title: 'The Lord of the Rings: The Two Towers', author: 'J.R.R. Tolkien', pages: 352, read: 'Read'},
+    {id: crypto.randomUUID(), title: 'A Game of Thrones', author: 'George R.R. Martin', pages: 694, read: 'Read'},
+    {id: crypto.randomUUID(), title: 'A Storm of Swords', author: 'George R.R. Martin', pages: 973, read: 'Read'},
+    {id: crypto.randomUUID(), title: 'Harry Potter and the Philosopher\'s Stone', author: 'J.K. Rowling', pages: 223, read: 'Read'},
+    {id: crypto.randomUUID(), title: 'Harry Potter and the Chamber of Secrets', author: 'J.K. Rowling', pages: 251, read: 'Read'},
+    {id: crypto.randomUUID(), title: 'Harry Potter and the Prisoner of Azkaban', author: 'J.K. Rowling', pages: 317, read: 'Not Read'},
+    {id: crypto.randomUUID(), title: 'It', author: 'Stephen King', pages: 1138, read: 'Read'},
+]
 
 function Book (title, author, pages, read) {
     this.id = crypto.randomUUID();
@@ -27,7 +31,6 @@ function addBookToLibrary (title, author, pages, read) {
     console.log(library);
     
 }
-addBookToLibrary('The Children of Hurin', 'J.R.R. Tolkien', 320, 'Read');
 
 
 const submitBtn = document.querySelector('#submit-btn');
