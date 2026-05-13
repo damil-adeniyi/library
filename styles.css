@@ -108,6 +108,7 @@ button:hover {
 .your-books .books {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(200px, 250px));
     gap: 20px;
 }
 
@@ -124,7 +125,7 @@ button:hover {
     flex-direction: column;
     gap: 5px;
     /* box-shadow: 12px 12px 1px -5px rgba(250, 204, 21, 0.8); */
-    max-height: 250px;
+    /* max-height: 250px; */
 }
 
 .books .book:hover {
