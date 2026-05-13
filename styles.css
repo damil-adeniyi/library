@@ -88,6 +88,11 @@ button:hover {
     height: 32px;
 }
 
+.my-library .book-icon:hover {
+    transform: translateY(-5px);
+    transition: all 0.3s ease;
+}
+
 /* your books */
 
 .container .your-books {
@@ -114,12 +119,18 @@ button:hover {
     background-color: var(--text-color);
     padding: 20px;
     border-radius: 10px;
-    /* border-left: 20px solid var(--secondary-color); */
+    border-left: 20px solid var(--secondary-color);
     display: flex;
     flex-direction: column;
     gap: 5px;
-    box-shadow: 12px 12px 1px -5px rgba(250, 204, 21, 0.8);
+    /* box-shadow: 12px 12px 1px -5px rgba(250, 204, 21, 0.8); */
     max-height: 250px;
+}
+
+.books .book:hover {
+    box-shadow: 12px 12px 1px -5px rgba(250, 204, 21, 0.8);
+    transform: translateY(-10px);
+    transition: all 0.3s ease-out;
 }
 
 .your-books .books .tag {
