@@ -394,6 +394,7 @@ form .form-group select option:active {
 
 .container .your-books {
     grid-row: 2/3;
+    grid-column: 1/2;
 }
 
 .container .new-books {
