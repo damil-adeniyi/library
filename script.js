@@ -53,6 +53,17 @@ function displayBook () {
 
 displayBook()
 
+// create Book btn
+
+const createBook = document.querySelector('#create-nb');
+const bookForm = document.querySelector('form')
+
+createBook.addEventListener('click', function () {
+    bookForm.classList.toggle('book-form-f')
+    // createBook.style.display = 'none';
+
+})
+
 submitBtn.addEventListener('click', function() {
     const title = bookTitle.value;
     const author = bookAuthor.value;
