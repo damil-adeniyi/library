@@ -41,7 +41,7 @@ function displayBook () {
             <div class="book-title"><h4><strong>Title:</strong> ${book.title}</h4></div>
             <div class="book-author"><h4><strong>Author:</strong> ${book.author}</h4></div>
             <div class="book-pages"><h4><strong>Pages:</strong> ${book.pages}</h4></div>
-            <div class="book-read"><h4><strong>Read Status:</strong> ${book.read}</h4></div>
+            <div class="book-read"><h4><strong>Status:</strong> ${book.read}</h4></div>
             `;
            
 
