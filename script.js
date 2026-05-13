@@ -38,10 +38,12 @@ function displayBook () {
 
 
             bookCard.innerHTML = `
-            <div class="book-title"><h4><strong>Title:</strong> ${book.title}</h4></div>
+            <div class="book-title"><h4><strong>Title:</strong> ${book.title}</h4>
+            </div>
             <div class="book-author"><h4><strong>Author:</strong> ${book.author}</h4></div>
             <div class="book-pages"><h4><strong>Pages:</strong> ${book.pages}</h4></div>
             <div class="book-read"><h4><strong>Status:</strong> ${book.read}</h4></div>
+            <div><button class="status status-remove">Remove Book</button> <button class="status status-read">Read Status</button></div>
             `;
            
 
@@ -64,11 +66,18 @@ createBook.addEventListener('click', function () {
 
 })
 
-submitBtn.addEventListener('click', function() {
-    const title = bookTitle.value;
-    const author = bookAuthor.value;
-    const pages = bookPages.value;
-    const read = bookRead.value;
+bookForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const title = document.querySelector('#book-title').value;
+    const author = document.querySelector('#book-author').value;
+    const pages = document.querySelector('#book-pages').value;
+    const read = document.querySelector('#book-read').value;
 
     addBookToLibrary(title, author, pages, read);
+
+    displayBook()
+
+    bookForm.reset(); 
 });
+
