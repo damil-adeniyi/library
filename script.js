@@ -1,10 +1,10 @@
 
 const library = [
-    {title: 'The Hobbit', author: 'J.R.R. Tolkien', pages: 310, read: 'Read'},
-    {title: 'The Lord of the Rings', author: 'J.R.R. Tolkien', pages: 1178, read: 'Read'},
-    {title: 'The Silmarillion', author: 'J.R.R. Tolkien', pages: 365, read: 'Not Read'},    
-    {title: 'The Children of Hurin', author: 'J.R.R. Tolkien', pages: 320, read: 'Read'},
-    {title: 'The Unfinished Tales', author: 'J.R.R. Tolkien', pages: 472, read: 'Not Read'}
+    {id: crypto.randomUUID(), title: 'The Hobbit', author: 'J.R.R. Tolkien', pages: 310, read: 'Read'},
+    {id: crypto.randomUUID(), title: 'The Lord of the Rings', author: 'J.R.R. Tolkien', pages: 1178, read: 'Read'},
+    {id: crypto.randomUUID(), title: 'The Silmarillion', author: 'J.R.R. Tolkien', pages: 365, read: 'Not Read'},    
+    {id: crypto.randomUUID(), title: 'The Children of Hurin', author: 'J.R.R. Tolkien', pages: 320, read: 'Read'},
+    {id: crypto.randomUUID(), title: 'The Unfinished Tales', author: 'J.R.R. Tolkien', pages: 472, read: 'Not Read'}
 ];
 
 function Book (title, author, pages, read) {
@@ -42,6 +42,7 @@ function displayBook () {
             const bookCard = document.createElement('div');
             bookCard.classList.add('book');
 
+            bookCard.setAttribute('data-id', book.id);
 
             bookCard.innerHTML = `
             <div class="book-title tag"><strong>Title:</strong><h4>${book.title}</h4>
@@ -65,6 +66,20 @@ function displayBook () {
                     book.read = (book.read === 'Read') ? 'Not Read' : 'Read';
                 }
                 displayBook(); // Refresh screen view with new state
+            });
+
+            
+            removeBtn.addEventListener('click', (e) => {
+            // Retrieve the unique ID string from the parent card element
+            const targetId = bookCard.getAttribute('data-id');
+            
+            // Find the array index where the book object matches this ID
+            const targetIndex = library.findIndex(item => item.id === targetId);
+            
+            if (targetIndex !== -1) {
+                library.splice(targetIndex, 1); // Mutate array data safely
+                displayBook(); // Re-render modern UI view layout
+            }
             });
             
            
