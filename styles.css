@@ -108,7 +108,7 @@ body {
     /* border-left: 20px solid var(--secondary-color); */
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 5px;
     box-shadow: 12px 12px 1px -5px rgba(250, 204, 21, 0.8);
     max-height: 250px;
 }
